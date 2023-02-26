@@ -173,7 +173,7 @@ public indirect enum TimeRule: Equatable {
             return dateInterval.contains(date)
         case let .timeRange(timeRange):
             var calendar = Calendar(identifier: .gregorian)
-            calendar.timeZone = TimeZone(identifier: "UTC")!
+            calendar.timeZone = timeZone
             let dateComponents = calendar.dateComponents(
                 [.weekday, .hour, .minute],
                 from: date
